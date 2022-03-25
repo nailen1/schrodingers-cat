@@ -130,7 +130,7 @@ label::before {
 }
 label input {
   position: absolute;
-  appearance: none;
+  /* appearance: none; */
 }
 .icon {
   position: absolute;
