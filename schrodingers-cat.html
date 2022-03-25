@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schrodinger's cat</title>
+
+    <link rel="stylesheet" href="schrodingers-cat.css">
+</head>
+
+<body>
+    <header>
+        <h1>A Schrödinger's cat</h1>
+    </header>
+
+    <div class="cat-svg">
+        <img src="cat-alive-editted.svg" alt="alive cat">
+        <span class="ket">
+            <div id="ket-1"></div>
+            <div id="ket-2"></div>
+        </span>
+            <span>+</span>
+        <img src="cat-dead-editted.svg" alt="dead cat">
+        <span class="ket">
+            <div id="ket-1"></div>
+            <div id="ket-2"></div>
+        </span>
+    </div>
+
+
+    <script>
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;  //최댓값도 포함, 최솟값도 포함
+        }
+
+        let catState = getRandomIntInclusive(0, 1);
+        let cat;
+        if (catState === 1) {
+            cat = '| alive >';
+        }
+        else if (catState === 0) {
+            cat = '| dead >'
+        }
+    </script>
+
+
+    <h3>initial state or prepared state</h3>
+    <h2> | cat > = 1/√2 ( | alive > + | dead > )</h2>
+    <h3>final state, or state observed by you</h3>
+    <h3>
+        <script>document.write(cat)</script>
+    </h3>
+
+
+    <div>
+        <div class="cat"></div>
+        <div class="{}"></div>
+        <div class="dead"></div>
+    </div>
+
+    <label>
+        <input type="checkbox">
+        <div class="icon">
+            <div class="shadow"></div>
+            <div class="iconBox">
+                <ion-icon name="power-outline"></ion-icon>
+            </div>
+        </div>
+    </label>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+body {
+    display: flex;
+}
+
+
+
+#ket-1 {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 120px solid #000;
+    border-top: 160px solid transparent;
+    border-bottom: 160px solid transparent;
+}
+#ket-2 {
+    position: absolute;
+    left: -8px;
+    top: 8px;
+    width: 0;
+    height: 0;
+    border-left: 120px solid #fff;
+    border-top: 160px solid transparent;
+    border-bottom: 160px solid transparent;
+}
+
+#left-triangle {
+    width: 0;
+    height: 0;
+    border-right: 140px solid #103252;
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+}
