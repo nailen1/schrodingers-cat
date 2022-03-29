@@ -5,86 +5,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schrodinger's cat</title>
+    <title>Schrödinger's cat| my uuzuu</title>
 
     <link rel="stylesheet" href="schrodingers-cat.css">
 </head>
 
 <body>
+<header>
+    <h1 class="logo">Schrödinger's cat</h1>
+    <!-- <ul class="step">
+        <li><a href="#step-1">step 1</a></li>
+        <li><a href="#">step 2</a></li>
+        <li><a href="#">step 3</a></li>
+        <li><a href="#">step 4</a></li>
+    </ul> -->
+</header>
 
-    <h1>A Schrodinger's cat</h1>
-    <h3>Initial cat state or prepared cat state :</h3>
-    <h3 style="font-size:1.5em">a cat is in a superposed state of alive and dead. </h3>
-    <div class="cat-svg">
-        <img src="cat-alive-editted.svg" alt="alive cat">
-        <span class="ket">
-            <div id="ket-1"></div>
-            <div id="ket-2"></div>
-        </span>
-        <span>+</span>
-        <img src="cat-dead-editted.svg" alt="alive cat">
-        <span class="ket">
-            <div id="ket-1"></div>
-            <div id="ket-2"></div>
-        </span>
-    </div>  
-    <br><br>
-    <h3>Make an observation or turn on the switch below :</h3>
-    <h3 style="font-size:1.5em">there is 50% chance that the cat will be alive or dead if you turn on the switch. </h3>
-    <label>
-        <input type="checkbox" id="checkBox">
-        <div class="icon">
-            <div class="shadow"></div>
-            <div class="iconBox">
-                <ion-icon name="power-outline"></ion-icon>
+<section class="step">
+    <div class="content">
+        <h2>Initial cat state or prepared cat state</h2>
+        <br>
+        <p>a cat is in a superposed state of alive and dead. </p>
+    </div>
+</section>
+
+<section class="imgBox">
+    <div class="content">
+        <div class="cat-svg">
+            <img src="cat-in-ket-alive.svg" alt="alive cat">
+            <span>+</span>
+            <img src="cat-in-ket-dead.svg" alt="alive cat">
+        </div>    
+    </div>
+</section>
+
+<section class="step">
+    <div class="content">
+        <h2>Make an observation or turn on the switch below</h2>
+        <br>
+        <p>there is 50% chance that the cat will be alive or dead if you turn on the switch.</p>
+    </div>
+</section>
+
+<section class="imgBox">
+    <div class="content">
+        <label>
+            <input type="checkbox" id="checkBox">
+            <div class="icon">
+                <div class="shadow"></div>
+                <div class="iconBox">
+                    <ion-icon name="power-outline"></ion-icon>
+                </div>
             </div>
-        </div>
-    </label>
-    <h3>Final state or state observed by you :</h3>
-    <h3 style="font-size:1.5em">your cat is ... </h3>
-    <div class="container">
-        <div id="alive">
-            <img src="cat-alive-editted.svg" alt="alive cat">
-            <span class="ket">
-                <div id="ket-1"></div>
-                <div id="ket-2"></div>
-            </span>
-        </div>
-        <div id="dead">
-            <img src="cat-dead-editted.svg" alt="alive cat">
-            <span class="ket">
-                <div id="ket-1"></div>
-                <div id="ket-2"></div>
-            </span>
-        </div>
-    </div>    
-    <div class="container">more detailed scenario ...</div>
+        </label>
+    </div>
+</section>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script>   
-        const checkBox = document.getElementById("checkBox")
-        checkBox.onclick = function()
-        {
-            const alive = document.getElementById("alive");
-            const dead = document.getElementById("dead")   
-            let x = Math.floor(Math.random() * 2);
-            
-            if(checkBox.checked === true ){
-                if(x === 1){
-                alive.classList.toggle("active");
-                dead.classList.remove("active");
-                }
-                else{
-                dead.classList.toggle("active");
-                alive.classList.remove("active");
-                }    
+<section class="step">
+    <div class="content">
+        <h2>Final state or state observed by you</h2>
+        <br>
+        <p>your cat is ... </p>
+    </div>
+</section>
+
+<section class="container">
+    <div id="alive">
+        <img src="cat-in-ket-alive.svg" alt="alive cat">
+    </div>
+    <div id="dead">
+        <img src="cat-in-ket-dead.svg" alt="dead cat">
+    </div>
+</section>
+
+<section class="step">
+    <div class="content">
+        <h2>it's too simple, why it matters?</h2>
+        <br>
+        <p id="btn">more detailed scenario >></p>
+    </div>
+</section>
+<!-- 
+<section class="foot">
+    <footer>
+        <h2>quantum physics simulator/physics/science/my uuzuu</h2>
+    </footer>
+</section> -->
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    window.addEventListener('scroll', function(){
+        const header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    })
+
+    const checkBox = document.getElementById("checkBox")
+    checkBox.onclick = function()
+    {
+        const alive = document.getElementById("alive");
+        const dead = document.getElementById("dead")   
+        let x = Math.floor(Math.random() * 2);
+        
+        if(checkBox.checked === true ){
+            if(x === 1){
+            alive.classList.toggle("active");
+            dead.classList.remove("active");
             }
             else{
-                alive.classList.remove("active");
-                dead.classList.remove("active");
-            }           
+            dead.classList.toggle("active");
+            alive.classList.remove("active");
+            }    
         }
+        else{
+            alive.classList.remove("active");
+            dead.classList.remove("active");
+        }
+        
+    }
     </script>
 </body>
 </html>

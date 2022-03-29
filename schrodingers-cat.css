@@ -8,104 +8,168 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  padding: 50px;
+  min-width: 350px;
+  background: #cfd1e1;
+  /* min-height: 300vh; */
+  /* overflow: hidden; */
+  overflow-x: hidden;
+}
+header {
+  /* border: 2px dashed hotpink; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 150px;
+  width: 100%;
+  padding: 30px 15px;
+  z-index: 10000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background: #cfd1e1;
-  /* overflow: hidden; */
+  transition: 0.5s;
 }
+header.sticky {
+  padding: 15px 15px;
+  min-height: 50px;
+  background: #555;
+}
+header .logo {
+  /* border: 1px dashed red; */
+  font-size: 2.5em;
+  font-weight: 400;
+  color: #555;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+header.sticky .logo {
+  width: 100%;
+  text-align: end;
+  font-size: 20px;
+  color: #cfd1e1;
 
-h1 {
-  padding: 50px;
-  font-size: 4em;
-  font-weight: 200;
+}
+header .step {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* border: 1px dashed red; */
+  padding: 10px;
+
+}
+header .step li {
+  list-style: none;
+  margin: 0 5px;
+}
+header .step li a {
+  text-decoration: none;
+  color: #555;
 }
 h2 {
-  margin: 30px;
-  font-size: 3em;
-  font-weight: 200;
-}
-h3 {
-  margin: 10px;
   font-size: 2em;
+  font-weight: 300;
+  /* color: #cfd1e1; */
+  color: #555;
+}
+p {
+  font-size: 1.5em;
   font-weight: 200;
+  /* color: #cfd1e1; */
+  color: #555;
+  /* text-align: end; */
 }
-
-div .ket {
+.step {
+  /* border: 2px dashed skyblue; */
+  padding: 20px 30px;
   position: relative;
-  top: 0px;
-  height: 150px;
-  /* border: 1px dashed red; */
-  z-index: 10;
-  margin-right: 20px;
+  top: 200px;
+  min-width: 350px;
+  /* height: 80vh; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* background: #555; */
 }
-.ket #ket-1 {
+.step .content {
+  /* border: 1px dashed blue; */
+  text-align: inherit;
+}
+.imgBox {
+  /* border: 2px dashed skyblue; */
+  padding: 20px 20px;
   position: relative;
-  width: 0;
-  height: 0;
-  border-left: 56px solid #000;
-  border-top: 76px solid transparent;
-  border-bottom: 76px solid transparent;
-  z-index: -10;
+  top: 200px;
+  /* height: 80vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #555; */
 }
-.ket #ket-2 {
-  position: absolute;
-  left: -8px;
-  top: 1px;
-  width: 0;
-  height: 0;
-  border-left: 56px solid #cfd1e1;
-  border-top: 76px solid transparent;
-  border-bottom: 76px solid transparent;
-  z-index: -9;
+.imgBox .content {
+  /* border: 1px dashed blue; */
+  text-align: center;
 }
-#alive,
-#dead,
 .cat-svg {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin: 30px; */
-  height: 300px;
+  height: 150px;
   /* border: 1px dashed red; */
-}
-#alive img,
-#dead img,
-.cat-svg img {
-  width: 300px;
-  /* border: 1px dashed red; */
-  border-left: 6px solid #000;
-  padding-left: 10px;
-  margin-left: 20px;
-}
-.cat-svg span {
-  font-size: 5em;
-  font-weight: 300;
-}
-.cat-svg #ket {
-  font-size: 10em;
 }
 
+.cat-svg img {
+  width: 140px;
+  /* border: 1px dashed red; */
+}
+.cat-svg span {
+  font-size: 3em;
+  font-weight: 200;
+  margin: 0 10px;
+  /* border: 1px dashed red; */
+}
 .container {
+  /* border: 2px dashed skyblue; */
+  padding: 20px 20px;
+  position: relative;
+  top: 200px;
+  height: 300px;
   display: flex;
   justify-content: center;
-  min-height: 300px;
-  padding: 50px;
+  align-items: center;
+  /* background: #555; */
+}
+.container #alive,
+.container #dead
+{
+  position: absolute;
+}
+#alive img,
+#dead img {
+  /* border: 1px dashed blueviolet; */
+  left: 0;
+  width: 250px;
 }
 #alive,
 #dead {
-  position: absolute;
   opacity: 0;
 }
-
 #alive.active,
 #dead.active {
   opacity: 1;
   transition: 0.5s;
+}
+#btn {
+  background: #555;
+  color: #cfd1e1;
+  width: fit-content;
+  text-align: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#btn:hover {
+  letter-spacing: 2px;
 }
 
 label {
