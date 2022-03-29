@@ -48,7 +48,6 @@ header.sticky .logo {
   text-align: end;
   font-size: 20px;
   color: #cfd1e1;
-
 }
 header .step {
   position: relative;
@@ -56,7 +55,6 @@ header .step {
   justify-content: center;
   /* border: 1px dashed red; */
   padding: 10px;
-
 }
 header .step li {
   list-style: none;
@@ -106,6 +104,22 @@ p {
   align-items: center;
   /* background: #555; */
 }
+.switchBox {
+  /* border: 2px dashed skyblue; */
+  padding: 20px 20px;
+  position: relative;
+  top: 200px;
+  /* height: 80vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #555; */
+}
+@media (max-width: 550px) {
+  .switchBox {
+    width: 205px;
+  }
+}
 .imgBox .content {
   /* border: 1px dashed blue; */
   text-align: center;
@@ -141,8 +155,7 @@ p {
   /* background: #555; */
 }
 .container #alive,
-.container #dead
-{
+.container #dead {
   position: absolute;
 }
 #alive img,
@@ -166,6 +179,7 @@ p {
   width: fit-content;
   text-align: center;
   transition: 0.5s;
+  font-size: 1em;
   cursor: pointer;
 }
 #btn:hover {
